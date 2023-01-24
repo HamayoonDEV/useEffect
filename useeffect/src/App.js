@@ -1,12 +1,27 @@
+import React from "react";
 
 
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email:''
+    }
+  }
+    handleChange = (e)=>{
+        this.setState({
+          email:e.target.value
+        })
+    }
+  
+  render(){
   return (
     <div className="App">
-      
+        <input value={this.state.email} onChange={this.handleChange} />
+        <p>Email:{this.state.email}</p>
     </div>
-  );
+    );}
 }
 
 export default App;
